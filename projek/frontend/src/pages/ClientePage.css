@@ -1,0 +1,288 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.page-title {
+  margin-bottom: 8px;
+  font-size: 32px;
+  color: #1f1f1f;
+}
+
+.page-subtitle {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #666;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: -6px 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 22px;
+  color: #111;
+}
+
+.menu-category {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  background: #eef3ff;
+  color: #2f5bd1;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu-description {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.menu-ingredients {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.loading-message,
+.error-message {
+  padding: 32px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.error-message {
+  color: #b00020;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.quantity-controls button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: #2f5bd1;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.quantity-controls button:hover {
+  background: #2447a8;
+}
+
+.quantity-controls span {
+  min-width: 24px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.order-form {
+  margin-bottom: 28px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: -6px 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.order-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.order-form input {
+  width: 100%;
+  max-width: 220px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.order-summary {
+  margin-top: 36px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: -6px 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.order-summary h2 {
+  margin-top: 0;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2f5bd1;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #2447a8;
+}
+
+.submit-button:disabled {
+  background: #9aa8d9;
+  cursor: not-allowed;
+}
+
+.success-message {
+  margin-top: 16px;
+  color: #0b7a28;
+  font-weight: bold;
+}
+
+.form-error-message {
+  margin-top: 16px;
+  color: #b00020;
+  font-weight: bold;
+}
+
+.cliente-hero {
+  margin-bottom: 24px;
+}
+
+.menu-section {
+  margin-bottom: 32px;
+}
+
+.menu-section-header {
+  margin-bottom: 14px;
+}
+
+.menu-section-title {
+  margin: 0;
+  font-size: 24px;
+  color: #1f1f1f;
+}
+
+.menu-card-selected {
+  outline: 3px solid #2f5bd1;
+  transform: translateY(-2px);
+}
+
+.success-box {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #e9f8ee;
+  border: 1px solid #b8e0c2;
+  color: #145c2a;
+}
+
+.success-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.success-box p {
+  margin: 6px 0;
+}
+
+.summary-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.clear-button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #e4e7ef;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background: #d8dde9;
+}
+
+.clear-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.app-shell.dark .page-title,
+.app-shell.dark .menu-section-title,
+.app-shell.dark .menu-card h3,
+.app-shell.dark .order-summary h2,
+.app-shell.dark .order-form label {
+  color: #f5f5f5;
+}
+
+.app-shell.dark .page-subtitle,
+.app-shell.dark .menu-description,
+.app-shell.dark .menu-ingredients,
+.app-shell.dark .summary-line,
+.app-shell.dark .order-form input,
+.app-shell.dark .menu-ingredients strong {
+  color: #d6d6d6;
+}
+
+.app-shell.dark .menu-card,
+.app-shell.dark .order-form,
+.app-shell.dark .order-summary {
+  background: #1f1f1f;
+  box-shadow: -6px 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.app-shell.dark .menu-card-selected {
+  outline: 3px solid #7ea2ff;
+}
+
+.app-shell.dark .order-form input {
+  background: #2a2a2a;
+  border: 1px solid #444;
+}
+
+.app-shell.dark .summary-line {
+  border-bottom: 1px solid #333;
+}
+
+.app-shell.dark .clear-button {
+  background: #333;
+  color: #f5f5f5;
+}
+
+.app-shell.dark .clear-button:hover {
+  background: #444;
+}

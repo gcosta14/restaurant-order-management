@@ -1,0 +1,82 @@
+.app-shell {
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app-shell.light {
+  background: #f5f5f5;
+  color: #222;
+}
+
+.app-shell.dark {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.app-shell.dark .topbar {
+  background: #1e1e1e;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.topbar-title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  background: #dfe6fb;
+  color: #2447a8;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background: #cfd9fb;
+}
+
+.nav-button.active {
+  background: #2f5bd1;
+  color: white;
+}
+
+.theme-button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  background: #222;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.theme-button:hover {
+  opacity: 0.9;
+}
+
+.app-shell.dark .theme-button {
+  background: #f5f5f5;
+  color: #111;
+}
