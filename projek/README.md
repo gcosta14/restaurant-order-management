@@ -92,9 +92,9 @@ restaurant-order-management/
 │   ├── package.json
 │   └── vite.config.js
 │
-└── README.md
+└── .gitignore
 │
-└──.gitignore
+└── README.md
 ```
 ---
 
