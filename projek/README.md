@@ -1,405 +1,513 @@
-🍽️ Restaurant Order Management System
+# 🍽️ Restaurant Order Management System
 
-Um sistema full-stack de gestão de pedidos para restaurante, desenvolvido com Django REST Framework no backend e React + Vite no frontend.
+Sistema **full-stack de gestão de pedidos para restaurante**, desenvolvido com **Django REST Framework** no backend e **React + Vite** no frontend.
 
-Este projeto inclui duas interfaces distintas:
+A aplicação permite gerir pedidos entre **clientes e cozinha**, facilitando o fluxo de trabalho dentro do restaurante.
 
-Cliente — para escolher a mesa, selecionar pratos e submeter pedidos
+---
 
-Cozinha — para acompanhar os pedidos por estado e atualizar a sua progressão
+# 📋 Índice
 
-📋 Índice
+- ✨ [Características](#-características)
+- 🛠️ [Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+- 📁 [Estrutura do Projeto](#-estrutura-do-projeto)
+- 📦 [Requisitos](#-requisitos)
+- 🚀 [Instalação e Setup](#-instalação-e-setup)
+- ⚙️ [Como Funciona](#️-como-funciona)
+- 🔌 [API Endpoints](#-api-endpoints)
+- 📸 [Screenshots](#-screenshots)
 
-✨ Características
+---
 
-🛠️ Tecnologias Utilizadas
+# ✨ Características
 
-📁 Estrutura do Projeto
+## 👤 Interface Cliente
 
-📦 Requisitos
+- ✅ Escolher mesa
+- ✅ Visualizar menu do restaurante
+- ✅ Selecionar pratos
+- ✅ Submeter pedidos
 
-🚀 Instalação e Setup
+## 👨‍🍳 Interface Cozinha
 
-🎯 Como Funciona
+- ✅ Visualizar pedidos em tempo real
+- ✅ Atualizar estado dos pedidos
+- ✅ Gerir fluxo de preparação
 
-🔌 API Endpoints
+---
 
-🏗️ Decisões Arquiteturais
+# 🛠️ Tecnologias Utilizadas
 
-🔮 Melhorias Futuras
+| Tecnologia | Utilização |
+|-----------|------------|
+| Python | Backend |
+| Django | Framework backend |
+| Django REST Framework | API REST |
+| SQLite | Base de dados |
+| React | Interface frontend |
+| Vite | Build tool |
+| Axios | Comunicação com API |
 
-📝 Notas
+---
 
-✨ Características
-Para Clientes
-
-✅ Visualização do menu organizado por categorias
-
-✅ Seleção de quantidades por prato
-
-✅ Escolha do número da mesa
-
-✅ Resumo do pedido antes de submissão
-
-✅ Submissão de pedidos para o backend
-
-✅ Feedback visual de sucesso e erro
-
-✅ Botão para limpar seleção
-
-Para a Cozinha
-
-✅ Dashboard com pedidos organizados por estado
-
-✅ Visualização em colunas:
-
-Order Preview
-
-Preparing
-
-Cooling Down
-
-Ready to Serve
-
-Concluded
-
-✅ Visualização dos detalhes de cada pedido
-
-✅ Indicação da mesa e hora de criação
-
-✅ Visualização de pratos, quantidades e ingredientes
-
-✅ Atualização manual com botão de refresh
-
-✅ Mudança de estado com ações de avanço e recuo
-
-Interface / UX
-
-🎨 Interface moderna e simples
-
-📱 Layout organizado por cartões
-
-🌙 Suporte para dark mode
-
-🧩 Separação clara entre interface de cliente e dashboard da cozinha
-
-🛠️ Tecnologias Utilizadas
-Backend
-
-Python
-
-Django
-
-Django REST Framework
-
-SQLite
-
-django-cors-headers
-
-Frontend
-
-React
-
-Vite
-
-JavaScript
-
-CSS
-
-📁 Estrutura do Projeto
+# 📁 Estrutura do Projeto
 restaurant-order-management/
-├── backend/
-│   ├── api/                  # Configuração principal do Django
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   ├── menu/                 # App dos itens do menu
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── views.py
-│   │   └── urls.py
-│   ├── orders/               # App dos pedidos e linhas de pedido
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── views.py
-│   │   └── urls.py
-│   ├── db.sqlite3
-│   └── manage.py
 │
-└── frontend/
-    ├── src/
-    │   ├── pages/
-    │   │   ├── ClientePage.jsx
-    │   │   ├── ClientePage.css
-    │   │   ├── CozinhaPage.jsx
-    │   │   └── CozinhaPage.css
-    │   ├── services/
-    │   │   └── api.js
-    │   ├── App.jsx
-    │   ├── App.css
-    │   ├── main.jsx
-    │   └── index.css
-    ├── public/
-    ├── package.json
-    └── vite.config.js
-    
-📦 Requisitos
-Backend
+├── backend/ # Backend Django
+│ │
+│ ├── api/ # Configuração principal Django
+│ │ ├── settings.py
+│ │ ├── urls.py
+│ │ └── wsgi.py
+│ │
+│ ├── menu/ # App dos itens do menu
+│ │ ├── models.py
+│ │ ├── serializers.py
+│ │ ├── views.py
+│ │ └── urls.py
+│ │
+│ ├── orders/ # App de pedidos
+│ │ ├── models.py
+│ │ ├── serializers.py
+│ │ ├── views.py
+│ │ └── urls.py
+│ │
+│ ├── db.sqlite3 # Base de dados
+│ └── manage.py
+│
+├── frontend/ # Frontend React
+│ │
+│ ├── src/
+│ │ ├── pages/
+│ │ │ ├── ClientePage.jsx
+│ │ │ └── CozinhaPage.jsx
+│ │ │
+│ │ ├── services/
+│ │ │ └── api.js
+│ │ │
+│ │ ├── App.jsx
+│ │ └── main.jsx
+│ │
+│ ├── package.json
+│ └── vite.config.js
+│
+└── README.md
 
-Python 3.10 ou superior
+---
 
-pip
+# 📦 Requisitos
 
-Frontend
+### Backend
 
-Node.js 18+
+- Python **3.10+**
+- pip
 
-npm
+### Frontend
 
-🚀 Instalação e Setup
-1️⃣ Clonar o repositório
-git clone <repository-url>
+- Node.js **18+**
+- npm ou yarn
+
+---
+
+# 🚀 Instalação e Setup
+
+## 1️⃣ Clonar o repositório
+
+```bash
+git clone https://github.com/teu-user/restaurant-order-management.git
 cd restaurant-order-management
-2️⃣ Setup do Backend
+```
 
-Entrar na pasta do backend:
+---
 
-cd backend
+## 2️⃣ Configurar Backend
 
-Criar ambiente virtual:
+### Criar ambiente virtual
 
-python -m venv .venv
+```bash
+python -m venv venv
+```
 
-Ativar ambiente virtual:
+### Ativar ambiente virtual
+
+Linux / Mac
+
+```bash
+source venv/bin/activate
+```
 
 Windows
 
-.venv\Scripts\activate
+```bash
+venv\Scripts\activate
+```
 
-macOS / Linux
+### Instalar dependências
 
-source .venv/bin/activate
+```bash
+pip install -r requirements.txt
+```
 
-Instalar dependências:
+### Migrar base de dados
 
-pip install django djangorestframework django-cors-headers
-
-Criar e aplicar migrações:
-
-python manage.py makemigrations
+```bash
 python manage.py migrate
+```
 
-Criar superuser:
+### Correr servidor
 
-python manage.py createsuperuser
-
-Arrancar o servidor backend:
-
+```bash
 python manage.py runserver
+```
 
-✅ Backend disponível em: http://127.0.0.1:8000/
+---
 
-3️⃣ Setup do Frontend
+## 3️⃣ Configurar Frontend
 
-Abrir novo terminal e entrar na pasta do frontend:
+### Ir para a pasta frontend
 
+```bash
 cd frontend
+```
 
-Instalar dependências:
+### Instalar dependências
 
+```bash
 npm install
+```
 
-Arrancar o frontend:
+### Correr aplicação
 
+```bash
 npm run dev
+```
 
-✅ Frontend disponível em: http://localhost:5173/
+---
 
-🎯 Como Funciona
-🧾 Interface do Cliente
+# ⚙️ Como Funciona
 
-A interface do cliente permite:
+1️⃣ O cliente seleciona uma mesa e escolhe pratos do menu.
 
-indicar o número da mesa
+2️⃣ O pedido é enviado para o backend através da API REST.
 
-visualizar o menu por categorias
+3️⃣ A cozinha visualiza os pedidos em tempo real.
 
-aumentar ou diminuir a quantidade de cada prato
+4️⃣ O estado do pedido pode ser atualizado:
 
-ver um resumo do pedido
+- **pendente**
+- **em preparação**
+- **pronto**
 
-submeter o pedido para o backend
+---
 
-Fluxo do Cliente
+# 🔌 API Endpoints
 
-Selecionar o número da mesa
+## Menu
 
-Escolher pratos e quantidades
+| Método | Endpoint | Descrição |
+|------|------|------|
+| GET | `/api/menu` | Listar itens do menu |
+| POST | `/api/menu` | Criar item do menu |
 
-Rever o resumo do pedido
+---
 
-Submeter o pedido
+## Orders
 
-Receber feedback visual de sucesso ou erro
+| Método | Endpoint | Descrição |
+|------|------|------|
+| GET | `/api/orders` | Listar pedidos |
+| POST | `/api/orders` | Criar pedido |
+| PATCH | `/api/orders/:id` | Atualizar estado do pedido |
 
-👨‍🍳 Dashboard da Cozinha
+---
 
-A dashboard da cozinha mostra os pedidos organizados por estado.
+# 📸 Screenshots
 
-Cada pedido apresenta:
+Adicionar imagens da aplicação:
 
-número do pedido
+- Página cliente
+- Página cozinha
+- Gestão de pedidos
 
-número da mesa
+---
 
-hora de criação
+# 🧠 Decisões Técnicas e Arquitetura
 
-pratos selecionados
+## Escolha do stack tecnológico
 
-quantidades
+Para este projeto foi escolhido o seguinte stack:
 
-ingredientes
+- **Backend:** Django + Django REST Framework
+- **Frontend:** React + Vite
+- **Base de dados:** SQLite
 
-A cozinha pode:
+### Porque escolhi Django + Django REST Framework
 
-fazer refresh manual
+Escolhi **Django** no backend porque permite construir aplicações web de forma rápida, organizada e com uma estrutura muito sólida desde o início.  
+Como este desafio pedia um sistema full-stack pequeno, mas bem estruturado, Django foi uma boa escolha por várias razões:
 
-avançar o pedido para o próximo estado
+- já inclui uma organização clara por aplicações
+- facilita a definição de modelos relacionais
+- permite expor uma API REST de forma simples com **Django REST Framework**
 
-recuar o pedido para o estado anterior
+O **Django REST Framework** foi escolhido porque torna a criação de endpoints mais limpa e consistente, principalmente na serialização de dados, validação de inputs e construção de respostas JSON.
 
-Estados do Pedido
+### Porque escolhi React + Vite
 
-order_preview
+No frontend, escolhi **React** porque permite dividir bem a interface em componentes reutilizáveis, o que é útil num sistema com duas vistas distintas:  
+uma vista de cliente e uma vista de cozinha.
 
-preparing
+O **Vite** foi escolhido por ser uma ferramenta moderna, rápida no arranque do projeto e com uma experiência de desenvolvimento muito leve. Para um projeto deste tamanho, oferece uma configuração simples sem complexidade desnecessária.
 
-cooling_down
+### Porque escolhi SQLite
 
-ready_to_serve
+Escolhi **SQLite** por ser suficiente para o âmbito deste desafio.  
+Como o objetivo era entregar uma aplicação funcional, simples de correr localmente e com configuração mínima, SQLite foi uma escolha prática e adequada.
 
-concluded
+As vantagens principais foram:
 
-🔌 API Endpoints
-Menu
-GET /api/menu/
-GET /api/menu/?category=carne
-Orders
-GET /api/orders/
-POST /api/orders/
-PATCH /api/orders/<id>/status/
-🧪 Exemplo de criação de pedido
-{
-  "table_number": 4,
-  "items": [
-    { "menu_item_id": 1, "quantity": 2 },
-    { "menu_item_id": 4, "quantity": 1 }
-  ]
-}
-🏗️ Decisões Arquiteturais
+- não exige instalação adicional
+- integra-se muito bem com Django
+- facilita a execução local imediata
+- é suficiente para um protótipo ou prova técnica deste tamanho
 
-Escolhi Django no backend por estar alinhado com a stack recomendada no enunciado e por oferecer uma estrutura sólida para:
+Num contexto de produção ou maior escala, faria sentido migrar para **PostgreSQL**.
 
-modelos
+---
 
-persistência
+# 🏗️ Arquitetura da Aplicação
 
-serializers
+A aplicação foi dividida em duas camadas principais:
 
-API REST
+## 1. Frontend
 
-No frontend usei React com Vite para manter a aplicação rápida, simples e bem separada por páginas.
+O frontend foi desenvolvido em **React** e é responsável por:
 
-Separação no backend
+- apresentar o menu ao cliente
+- permitir selecionar pratos e quantidades
+- submeter pedidos
+- mostrar a interface da cozinha
+- atualizar visualmente o estado dos pedidos
 
-O backend foi dividido em duas apps principais:
+A interface foi separada em páginas/componentes para manter a lógica organizada e facilitar manutenção futura.
 
-menu — responsável pelos pratos do menu
+## 2. Backend
 
-orders — responsável pelos pedidos e linhas de pedido
+O backend foi desenvolvido em **Django REST Framework** e é responsável por:
 
-Modelo de dados
+- disponibilizar o menu através da API
+- receber novos pedidos
+- guardar pedidos e respetivas linhas de pedido
+- devolver a lista de pedidos existentes
+- atualizar o estado dos pedidos ao longo do fluxo da cozinha
 
-O modelo foi construído com três entidades principais:
+O backend funciona como fonte central da verdade para os dados do sistema.
 
-MenuItem
+## 3. Base de dados
 
-Order
+A base de dados guarda as entidades principais do sistema:
 
-OrderLine
+- itens do menu
+- pedidos
+- linhas de pedido
 
-Isto permite uma estrutura limpa e normalizada:
+A estrutura foi desenhada para refletir relações reais entre estas entidades e manter o modelo limpo e normalizado, tal como pedido no enunciado. :contentReference[oaicite:2]{index=2}
 
-um pedido pode ter várias linhas
+---
 
-cada linha está associada a um prato do menu
+# 🧩 Modelo de Dados
 
-cada linha guarda a quantidade pedida
+O modelo de dados foi pensado para separar claramente as responsabilidades entre os diferentes elementos do sistema.
 
-Dashboard da cozinha
+## MenuItem
 
-Na cozinha optei por refresh manual, porque:
+Representa um prato disponível no menu.
 
-é suficiente para o objetivo do projeto
+Contém informação como:
 
-reduz complexidade
+- nome
+- categoria
+- descrição
+- ingredientes
 
-evita over-engineering
+Esta separação permite listar os pratos por categoria e reutilizar a informação tanto na interface do cliente como na vista detalhada da cozinha.
 
-é fácil de justificar e manter
+## Order
 
-Tema escuro
+Representa um pedido feito por uma mesa.
 
-O dark mode foi implementado com estado no componente principal e classes condicionais, sem dependências externas.
+Contém informação como:
 
-🔮 Melhorias Futuras
+- número da mesa
+- timestamp de criação
+- estado atual do pedido
 
-Com mais tempo, acrescentaria:
+O estado é importante para permitir o fluxo entre as colunas da cozinha:
 
-atualização automática da dashboard da cozinha
+- Order Preview
+- Preparing
+- Cooling Down
+- Ready to Serve
+- Concluded
 
-persistência do dark mode com localStorage
+## OrderLine
 
-navegação com React Router
+Representa a ligação entre um pedido e um item de menu.
 
-melhor responsividade em ecrãs pequenos
+Contém:
 
-filtragem e pesquisa de pedidos na cozinha
+- pedido associado
+- prato associado
+- quantidade
 
-testes automáticos no backend e frontend
+Esta tabela intermédia foi necessária porque um pedido pode conter vários pratos, e cada prato pode aparecer em vários pedidos.  
+Assim, a relação entre pedidos e pratos fica corretamente modelada.
 
-histórico separado para pedidos concluídos
+---
 
-polimento visual adicional
+# 🔌 Design da API
 
-📝 Notas
+A API foi desenhada segundo uma abordagem REST simples, clara e adequada ao âmbito do projeto.  
+O objetivo foi manter os endpoints fáceis de compreender e diretamente alinhados com as necessidades do frontend.
 
-O projeto foi pensado para correr localmente com configuração mínima.
+### Princípios seguidos
 
-Não foi implementada autenticação, de forma a manter o âmbito reduzido do desafio.
+- endpoints separados por recurso
+- respostas em JSON
+- operações simples e previsíveis
+- estrutura suficiente para suportar as duas interfaces do sistema
 
-O foco principal foi:
+### Endpoints principais
 
-funcionalidade
+#### Menu
 
-clareza da arquitetura
+- `GET /api/menu/`  
+  Devolve os itens do menu
 
-separação de responsabilidades
+#### Orders
 
-simplicidade da solução
+- `GET /api/orders/`  
+  Devolve os pedidos existentes para a vista da cozinha
 
-👨‍💻 Autor
+- `POST /api/orders/`  
+  Cria um novo pedido com as respetivas linhas
 
-Desenvolvido por Gonçalo Costa
+- `PATCH /api/orders/:id/`  
+  Atualiza o estado de um pedido
 
-🚀 Final Notes
+Esta estrutura cobre exatamente o que o desafio pedia: obter menu, submeter pedido, listar pedidos existentes e atualizar o estado do pedido. :contentReference[oaicite:3]{index=3}
+
+---
+
+# 🖥️ Estrutura do Frontend
+
+A estrutura do frontend foi organizada para separar responsabilidades entre:
+
+- **pages** → vistas principais da aplicação
+- **components** → componentes reutilizáveis
+- **services** → comunicação com a API
+- **styles** → ficheiros de estilo
+
+Esta separação ajuda a manter o código mais legível e facilita futuras alterações.
+
+### Organização das vistas
+
+Foram criadas duas áreas principais:
+
+#### Interface Cliente
+
+Pensada para ser simples e direta.  
+O utilizador consegue:
+
+- escolher a mesa
+- ver os pratos por categoria
+- escolher quantidades
+- rever o pedido
+- confirmar a submissão
+
+#### Dashboard Cozinha
+
+Pensado para dar uma visão rápida do estado dos pedidos.  
+Os pedidos são apresentados por estado, permitindo ao staff acompanhar a progressão de cada um.
+
+---
+
+# ⚖️ Trade-offs e simplificações
+
+Como este desafio valorizava uma solução limpa e funcional sem over-engineering, foram tomadas algumas decisões conscientes. :contentReference[oaicite:4]{index=4}
+
+## Optei por simplicidade em vez de complexidade extra
+
+Alguns exemplos:
+
+- **SQLite** em vez de PostgreSQL
+- **refresh manual** ou atualização simples em vez de arquitetura mais complexa em tempo real
+- ausência de autenticação, porque o enunciado indica que não é necessária
+- foco na funcionalidade principal em vez de investir demasiado em styling
+
+Estas escolhas ajudaram a manter o projeto dentro do âmbito pedido, sem adicionar complexidade desnecessária.
+
+---
+
+# 🚀 O que melhoraria com mais tempo
+
+Se tivesse mais tempo, as principais melhorias seriam:
+
+## 1. Atualizações em tempo real
+
+Implementaria atualização automática do dashboard da cozinha usando **WebSockets** ou **Server-Sent Events**.  
+Isto permitiria que novos pedidos aparecessem sem necessidade de refresh manual.
+
+## 2. Melhor gestão de erros e validações
+
+Melhoraria a validação de inputs tanto no frontend como no backend, por exemplo:
+
+- impedir submissão sem mesa selecionada
+- impedir pedidos vazios
+- mostrar mensagens de erro mais detalhadas ao utilizador
+
+## 3. Melhor experiência de utilizador no dashboard
+
+Adicionaria uma experiência mais polida para a cozinha, por exemplo:
+
+- drag-and-drop entre colunas
+- filtros por mesa
+- ordenação por hora
+- indicadores visuais por prioridade
+
+## 4. Base de dados mais robusta
+
+Migraria de **SQLite** para **PostgreSQL** caso o sistema fosse usado num contexto real ou com vários utilizadores em simultâneo.
+
+## 5. Testes
+
+Adicionaria testes automáticos para:
+
+- endpoints principais da API
+- criação de pedidos
+- atualização de estados
+- componentes críticos do frontend
+
+## 6. Dockerização
+
+Criaria uma configuração com **Docker** e **docker-compose** para tornar a execução local ainda mais simples e consistente.
+
+---
+
+# ℹ️ Informação adicional relevante
 
 Este projeto foi desenvolvido com foco em:
 
-separação clara entre frontend e backend
+- cumprir integralmente os requisitos do desafio
+- manter uma separação clara entre frontend e backend
+- construir um modelo de dados limpo
+- expor uma API REST simples e consistente
+- entregar uma solução funcional, fácil de correr localmente e fácil de explicar
 
-simplicidade da solução
+Sempre que possível, foi privilegiada uma abordagem simples e sólida em vez de uma solução excessivamente complexa, de acordo com o espírito do enunciado. :contentReference[oaicite:5]{index=5}
 
-modelo de dados limpo
+# 👨‍💻 Autor
 
-interface funcional para cliente e cozinha
+Desenvolvido por
+
+**Gonçalo Costa**
