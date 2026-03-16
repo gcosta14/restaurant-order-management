@@ -127,6 +127,12 @@ cd restaurant-order-management
 
 ## 2️⃣ Configurar Backend
 
+### Ir para a pasta frontend
+
+```bash
+cd projek/backend
+```
+
 ### Criar ambiente virtual
 
 ```bash
@@ -172,7 +178,7 @@ python manage.py runserver
 ### Ir para a pasta frontend
 
 ```bash
-cd frontend
+cd projek/frontend
 ```
 
 ### Instalar dependências
