@@ -51,48 +51,49 @@ A aplicação permite gerir pedidos entre **clientes e cozinha**, facilitando o 
 ---
 
 # 📁 Estrutura do Projeto
+```text
 restaurant-order-management/
 │
-├── backend/ # Backend Django
-│ │
-│ ├── api/ # Configuração principal Django
-│ │ ├── settings.py
-│ │ ├── urls.py
-│ │ └── wsgi.py
-│ │
-│ ├── menu/ # App dos itens do menu
-│ │ ├── models.py
-│ │ ├── serializers.py
-│ │ ├── views.py
-│ │ └── urls.py
-│ │
-│ ├── orders/ # App de pedidos
-│ │ ├── models.py
-│ │ ├── serializers.py
-│ │ ├── views.py
-│ │ └── urls.py
-│ │
-│ ├── db.sqlite3 # Base de dados
-│ └── manage.py
+├── backend/                     # Backend Django
 │
-├── frontend/ # Frontend React
-│ │
-│ ├── src/
-│ │ ├── pages/
-│ │ │ ├── ClientePage.jsx
-│ │ │ └── CozinhaPage.jsx
-│ │ │
-│ │ ├── services/
-│ │ │ └── api.js
-│ │ │
-│ │ ├── App.jsx
-│ │ └── main.jsx
-│ │
-│ ├── package.json
-│ └── vite.config.js
+│   ├── api/                     # Configuração principal Django
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   │
+│   ├── menu/                    # App dos itens do menu
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   └── urls.py
+│   │
+│   ├── orders/                  # App dos pedidos
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   └── urls.py
+│   │
+│   ├── db.sqlite3               # Base de dados
+│   └── manage.py
+│
+├── frontend/                    # Frontend React
+│
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── ClientePage.jsx
+│   │   │   └── CozinhaPage.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
 │
 └── README.md
-
+```
 ---
 
 # 📦 Requisitos
