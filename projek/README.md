@@ -142,6 +142,7 @@ restaurant-order-management/
     ├── public/
     ├── package.json
     └── vite.config.js
+    
 📦 Requisitos
 Backend
 
