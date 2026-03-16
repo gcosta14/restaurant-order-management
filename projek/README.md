@@ -96,7 +96,7 @@ restaurant-order-management/
 │
 ├── README.md
 │
-└──requirements.txt
+└── requirements.txt
 ```
 ---
 
