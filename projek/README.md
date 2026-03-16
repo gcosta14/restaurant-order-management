@@ -94,7 +94,9 @@ restaurant-order-management/
 │
 ├── .gitignore
 │
-└── README.md
+├── README.md
+│
+└──requirements.txt
 ```
 ---
 
