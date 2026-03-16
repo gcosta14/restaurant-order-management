@@ -117,7 +117,7 @@ restaurant-order-management/
 ## 1️⃣ Clonar o repositório
 
 ```bash
-git clone https://github.com/teu-user/restaurant-order-management.git
+git clone [https://github.com/teu-user/restaurant-order-management.git](https://github.com/gcosta14/restaurant-order-management)
 cd restaurant-order-management
 ```
 
