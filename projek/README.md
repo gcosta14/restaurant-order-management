@@ -172,6 +172,11 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+### Criar utilizador admin
+
+```bash
+python manage.py createsuperuser
+```
 
 ---
 
