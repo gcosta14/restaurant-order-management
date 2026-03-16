@@ -156,7 +156,9 @@ venv\Scripts\activate
 ### Instalar dependências
 
 ```bash
+cd ..
 pip install -r requirements.txt
+cd backend
 ```
 
 ### Migrar base de dados
